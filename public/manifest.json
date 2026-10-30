@@ -7,11 +7,11 @@
   "version": {
     "major": 0,
     "minor": 1,
-    "patch": 0
+    "patch": 1
   },
   "theme": [],
   "enableOnMobile": true,
-  "description": "Makes the dot grid on the infinite drawing canvas properly visible, at every zoom level. Adjustable strength, separate colours for light and dark canvas backgrounds.",
+  "description": "RemNote's canvas dots are so faint they all but vanish as you zoom. This brings them back, so you can actually write straight. Five strength levels, separate colours for light and dark backgrounds.",
   "requestNative": false,
   "requiredScopes": [
     {
