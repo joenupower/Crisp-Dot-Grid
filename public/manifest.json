@@ -1,0 +1,22 @@
+{
+  "manifestVersion": 1,
+  "id": "crisp_dot_grid",
+  "name": "Crisp Dot Grid",
+  "author": "joenupower",
+  "repoUrl": "https://github.com/joenupower/Crisp-Dot-Grid",
+  "version": {
+    "major": 0,
+    "minor": 1,
+    "patch": 0
+  },
+  "theme": [],
+  "enableOnMobile": true,
+  "description": "Makes the dot grid on the infinite drawing canvas properly visible, at every zoom level. Adjustable strength, separate colours for light and dark canvas backgrounds.",
+  "requestNative": false,
+  "requiredScopes": [
+    {
+      "type": "All",
+      "level": "Read"
+    }
+  ]
+}

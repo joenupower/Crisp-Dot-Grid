@@ -1,0 +1,7 @@
+/*
+ * This plugin generates all of its CSS at runtime from the user's settings
+ * (see src/widgets/index.tsx, which calls plugin.app.registerCSS).
+ *
+ * Nothing belongs in this file: a static rule here could not react to the
+ * settings, and would fight with the generated one over the same property.
+ */
