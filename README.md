@@ -27,54 +27,6 @@ It replaces only the `background-image` of the grid layer, leaving `background-s
 
 The dot radius is given as a **percentage of the grid cell**, which resolves against `background-size` and therefore follows the zoom on its own — no JavaScript polling, no observers. A `max()` floor keeps the dot readable when you zoom out, which is where RemNote's own clamp gives up.
 
-```css
-.drawing-canvas-infinite-background div[style*="rgba(0, 0, 0,"] {
-  background-image: radial-gradient(
-    rgba(0, 0, 0, 0.5) max(0.91px, 6.5%),
-    transparent        max(1.26px, 9%)) !important;
-}
-```
-
-Light and dark canvas backgrounds are told apart by the colour RemNote itself writes into the inline style (black dots vs. white dots), so there is no theme detection to get out of sync. If RemNote ever paints the grid in some third colour, neither rule matches and the grid is left untouched.
-
-## Settings
-
-| Setting | Default |
-| --- | --- |
-| Enable dot grid enhancement | on |
-| Dot visibility | Medium |
-| Dot visibility (dark background) | Match light background |
-| Dot colour on light background (R, G, B) | `0, 0, 0` |
-| Dot colour on dark background (R, G, B) | `255, 255, 255` |
-| Custom opacity | 0.5 |
-| Custom dot size (% of grid cell) | 6.5 |
-
-The five levels:
-
-| Level | Opacity | Dot core | Fade out |
-| --- | --- | --- | --- |
-| Very subtle | 0.28 | 5% | 7% |
-| Subtle | 0.38 | 6% | 8.5% |
-| Medium | 0.50 | 6.5% | 9% |
-| Pronounced | 0.62 | 7.5% | 10% |
-| Strong | 0.78 | 8.5% | 11.5% |
-
-Choosing **Custom** uses the two numeric settings instead. The dark background follows the light setting with a little extra opacity unless you give it a level of its own.
-
-## Scope and limits
-
-- Applies to the **infinite canvas** only. Page-based handwritten documents use a different container and are not touched.
-- PDF annotations, image drawings and inline drawings are unaffected.
-- `.drawing-canvas-infinite-background` and the inline gradient are not a documented, stable RemNote interface. A RemNote update can change them, in which case the plugin quietly stops having an effect rather than breaking anything. Worth a quick check after major updates.
-
-## Development
-
-```bash
-npm install
-npm run dev     # then: Settings -> Plugins -> Build -> Develop from Localhost
-npm run build   # produces PluginZip.zip for the marketplace
-```
-
 ## License
 
 MIT
